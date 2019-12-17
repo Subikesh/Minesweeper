@@ -9,8 +9,8 @@ class Mines:
         self.mines = []             #list of position of mines
         self.flags = []             #list of flags by user
         self.mine_probablity = []   #contains a list of data behind the buttons
-        self.no_of_mines = 30       #max number of mines in the grid
-        self.no_of_flags = 30       #max number of flags in the grid
+        self.no_of_mines = 20       #max number of mines in the grid
+        self.no_of_flags = 20       #max number of flags in the grid
         self.row = 10               #no of rows in grid
         self.col = 15               #number of columns in the grid
 
@@ -177,7 +177,7 @@ class Mines:
             for c in range(self.col):
                 #When user hits a bomb 
                 if [r, c] in self.mines:
-                    b = Button(root, text =" * ", width = 3, height = 2, command = lambda index=[r, c] : self.explode(index))
+                    b = Button(root, text ="   ", width = 3, height = 2, command = lambda index=[r, c] : self.explode(index))
                 elif self.mine_probablity[r][c] != 0:
                     b = Button(root, text = "   ", width = 3, height = 2, 
                     command = lambda index=[r, c] : self.show_num(index))
